@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kebijakan Privasi — myDN FlashPay</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.7;
+        }
+        header {
+            background: #1565C0;
+            color: white;
+            padding: 32px 24px;
+            text-align: center;
+        }
+        header h1 { font-size: 26px; margin-bottom: 6px; }
+        header p { font-size: 14px; opacity: 0.85; }
+        .container {
+            max-width: 800px;
+            margin: 32px auto;
+            background: white;
+            border-radius: 10px;
+            padding: 36px 40px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        h2 {
+            color: #1565C0;
+            font-size: 18px;
+            margin-top: 28px;
+            margin-bottom: 10px;
+            border-left: 4px solid #1565C0;
+            padding-left: 12px;
+        }
+        p { margin-bottom: 12px; font-size: 15px; }
+        ul { padding-left: 20px; margin-bottom: 12px; }
+        ul li { margin-bottom: 6px; font-size: 15px; }
+        .updated {
+            text-align: center;
+            color: #888;
+            font-size: 13px;
+            margin-bottom: 24px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+            color: #999;
+        }
+        a { color: #1565C0; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>myDN FlashPay</h1>
+    <p>Kebijakan Privasi Aplikasi</p>
+</header>
+
+<div class="container">
+    <p class="updated">Terakhir diperbarui: 30 September 2026</p>
+
+    <p>
+        Kebijakan Privasi ini menjelaskan bagaimana <strong>myDN FlashPay</strong> ("kami", "aplikasi")
+        mengumpulkan, menggunakan, dan melindungi informasi Anda saat menggunakan aplikasi kami.
+        Dengan menggunakan aplikasi ini, Anda menyetujui kebijakan yang tertuang di sini.
+    </p>
+
+    <h2>1. Informasi yang Kami Kumpulkan</h2>
+    <p>Aplikasi myDN FlashPay mengumpulkan dan memproses informasi berikut:</p>
+    <ul>
+        <li><strong>Notifikasi Perangkat:</strong> Aplikasi membaca notifikasi masuk dari aplikasi perbankan (seperti SeaBank) untuk mendeteksi mutasi saldo masuk secara otomatis. Data notifikasi hanya diproses secara lokal di perangkat Anda.</li>
+        <li><strong>Data Transaksi:</strong> Nominal dan informasi topup yang diproses disimpan sementara di database lokal perangkat dan disinkronkan ke Firebase Realtime Database untuk keperluan riwayat transaksi.</li>
+        <li><strong>Preferensi Pengguna:</strong> Pengaturan aplikasi (tema, status layanan, kunci pengguna) disimpan secara lokal di perangkat.</li>
+        <li><strong>Informasi Sesi Web:</strong> Aplikasi menggunakan WebView yang mengakses situs Serpul untuk keperluan validasi deposit. Cookie sesi disimpan di perangkat untuk menjaga status login.</li>
+    </ul>
+
+    <h2>2. Cara Kami Menggunakan Informasi</h2>
+    <p>Informasi yang dikumpulkan digunakan untuk:</p>
+    <ul>
+        <li>Mendeteksi dan memvalidasi transaksi topup secara otomatis</li>
+        <li>Menyimpan riwayat mutasi dan status validasi</li>
+        <li>Menyinkronkan data transaksi ke Firebase untuk tampilan riwayat</li>
+        <li>Menjalankan layanan latar belakang agar validasi tetap aktif</li>
+    </ul>
+
+    <h2>3. Penyimpanan dan Keamanan Data</h2>
+    <p>
+        Data transaksi disimpan di <strong>Firebase Realtime Database</strong> milik pengembang dengan perlindungan
+        keamanan bawaan Google Firebase. Data notifikasi dan preferensi pengguna disimpan secara lokal
+        di perangkat dan tidak dibagikan ke pihak ketiga.
+    </p>
+    <p>
+        Kami tidak menjual, memperdagangkan, atau mentransfer data pribadi Anda kepada pihak luar
+        tanpa persetujuan Anda, kecuali diwajibkan oleh hukum yang berlaku.
+    </p>
+
+    <h2>4. Izin Aplikasi yang Digunakan</h2>
+    <ul>
+        <li><strong>Notification Listener:</strong> Untuk membaca notifikasi perbankan demi deteksi mutasi otomatis</li>
+        <li><strong>Internet:</strong> Untuk mengakses situs Serpul dan Firebase</li>
+        <li><strong>Foreground Service:</strong> Untuk menjaga layanan validasi tetap aktif di latar belakang</li>
+        <li><strong>Receive Boot Completed:</strong> Untuk memulai ulang layanan setelah perangkat restart</li>
+    </ul>
+
+    <h2>5. Layanan Pihak Ketiga</h2>
+    <p>Aplikasi ini menggunakan layanan pihak ketiga berikut:</p>
+    <ul>
+        <li><a href="https://firebase.google.com/support/privacy" target="_blank">Google Firebase</a> — untuk penyimpanan data dan sinkronisasi riwayat transaksi</li>
+        <li><a href="https://policies.google.com/privacy" target="_blank">Google AdMob</a> — untuk menampilkan iklan dalam aplikasi</li>
+        <li><strong>Serpul</strong> — platform topup pulsa yang diakses via WebView untuk validasi deposit</li>
+    </ul>
+
+    <h2>6. Data Anak-Anak</h2>
+    <p>
+        Aplikasi ini tidak ditujukan untuk anak-anak di bawah usia 13 tahun. Kami tidak secara
+        sengaja mengumpulkan data pribadi dari anak-anak. Jika Anda mengetahui bahwa anak Anda
+        telah memberikan informasi kepada kami, silakan hubungi kami agar kami dapat menghapus data tersebut.
+    </p>
+
+    <h2>7. Perubahan Kebijakan Privasi</h2>
+    <p>
+        Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. Perubahan akan diberitahukan
+        melalui pembaruan aplikasi. Kami menyarankan Anda untuk meninjau halaman ini secara berkala.
+    </p>
+
+    <h2>8. Hubungi Kami</h2>
+    <p>
+        Jika Anda memiliki pertanyaan mengenai Kebijakan Privasi ini, silakan hubungi kami melalui
+        email pengembang yang tercantum di halaman aplikasi pada Google Play Store.
+    </p>
+</div>
+
+<footer>
+    &copy; 2026 myDN FlashPay. Seluruh hak dilindungi.
+</footer>
+
+</body>
+</html>
