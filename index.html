@@ -62,93 +62,87 @@
 </header>
 
 <div class="container">
-    <p class="updated">Terakhir diperbarui: 30 September 2026</p>
+    <p class="updated">Terakhir diperbarui: 01 Oktober 2026</p>
 
     <p>
         Kebijakan Privasi ini menjelaskan bagaimana <strong>myDN FlashPay</strong> ("kami", "aplikasi")
         mengumpulkan, menggunakan, dan melindungi informasi Anda saat menggunakan aplikasi kami.
-        Dengan menggunakan aplikasi ini, Anda menyetujui kebijakan yang tertuang di sini.
+        Dengan mengunduh dan menggunakan aplikasi ini, Anda menyetujui kebijakan yang tertuang di halaman ini.
     </p>
 
     <h2>1. Informasi yang Kami Kumpulkan</h2>
     <p>Aplikasi myDN FlashPay mengumpulkan dan memproses informasi berikut:</p>
     <ul>
-        <li><strong>Notifikasi Perangkat:</strong> Aplikasi membaca notifikasi masuk dari aplikasi perbankan (seperti SeaBank) untuk mendeteksi mutasi saldo masuk secara otomatis. Data notifikasi hanya diproses secara lokal di perangkat Anda.</li>
-        <li><strong>Data Transaksi:</strong> Nominal dan informasi topup yang diproses disimpan sementara di database lokal perangkat dan disinkronkan ke Firebase Realtime Database untuk keperluan riwayat transaksi.</li>
-        <li><strong>Preferensi Pengguna:</strong> Pengaturan aplikasi (tema, status layanan, kunci pengguna) disimpan secara lokal di perangkat.</li>
-        <li><strong>Informasi Sesi Web:</strong> Aplikasi menggunakan WebView yang mengakses situs Serpul untuk keperluan validasi deposit. Cookie sesi disimpan di perangkat untuk menjaga status login.</li>
+        <li><strong>Notifikasi Perangkat (Lokal):</strong> Aplikasi membaca notifikasi uang masuk dari aplikasi perbankan atau e-wallet yang Anda pilih untuk mendeteksi transaksi secara otomatis. Pemrosesan teks notifikasi dilakukan sepenuhnya di dalam perangkat Anda.</li>
+        <li><strong>Aktivitas Web Browser & Riwayat (Lokal):</strong> Aplikasi menyediakan fitur Web Browser internal untuk memudahkan pengguna membuka mesin pencari, website server pulsa/mitra masing-masing, maupun situs lainnya. Riwayat penjelajahan (browsing history) dan bookmark disimpan secara lokal di perangkat dan tidak dikirim ke server pihak luar manapun.</li>
+        <li><strong>Sandi & Kredensial Pengguna:</strong> Fitur penyimpanan akun, sandi, dan autofill didukung langsung oleh sistem Android (Android Autofill Framework) dan penyimpanan lokal peramban demi kenyamanan login Anda. Kami tidak menyimpan atau mentransmisikan sandi Anda ke server kami.</li>
+        <li><strong>Data Transaksi:</strong> Nominal dan status validasi disimpan di database lokal perangkat serta disinkronkan ke Firebase Realtime Database untuk tampilan riwayat transaksi Anda.</li>
+        <li><strong>Preferensi Pengguna:</strong> Pengaturan aplikasi (tema tampilan, status layanan, lisensi/kunci pengguna) disimpan di penyimpanan lokal perangkat.</li>
     </ul>
 
     <h2>2. Cara Kami Menggunakan Informasi</h2>
-    <p>Informasi yang dikumpulkan digunakan untuk:</p>
+    <p>Informasi yang dikumpulkan digunakan untuk tujuan berikut:</p>
     <ul>
-        <li>Mendeteksi dan memvalidasi transaksi topup secara otomatis</li>
-        <li>Menyimpan riwayat mutasi dan status validasi</li>
-        <li>Menyinkronkan data transaksi ke Firebase untuk tampilan riwayat</li>
-        <li>Menjalankan layanan latar belakang agar validasi tetap aktif</li>
+        <li>Mendeteksi mutasi saldo masuk dan memvalidasi deposit di website mitra/server pilihan pengguna secara otomatis</li>
+        <li>Menyediakan fungsionalitas penjelajahan web, pengelolaan bookmark, dan riwayat penjelajahan yang praktis bagi pengguna</li>
+        <li>Menampilkan riwayat transaksi dan status keberhasilan validasi</li>
+        <li>Menjalankan layanan latar belakang agar otomasi tetap aktif ketika layar mati atau beralih aplikasi</li>
     </ul>
 
     <h2>3. Penyimpanan dan Keamanan Data</h2>
     <p>
-        Data transaksi disimpan di <strong>Firebase Realtime Database</strong> milik pengembang dengan perlindungan
-        keamanan bawaan Google Firebase. Data notifikasi dan preferensi pengguna disimpan secara lokal
-        di perangkat dan tidak dibagikan ke pihak ketiga.
+        Data riwayat transaksi disinkronkan menggunakan <strong>Google Firebase Realtime Database</strong> dengan enkripsi SSL/TLS standar industri. 
+        Data notifikasi perbankan, riwayat browsing web, bookmark, dan kredensial login disimpan secara lokal di memori internal perangkat Anda.
     </p>
     <p>
-        Kami tidak menjual, memperdagangkan, atau mentransfer data pribadi Anda kepada pihak luar
-        tanpa persetujuan Anda, kecuali diwajibkan oleh hukum yang berlaku.
+        Kami tidak menjual, memperjualbelikan, atau menyewakan data pribadi Anda kepada pihak lain tanpa persetujuan Anda, kecuali jika diwajibkan oleh ketentuan hukum yang berlaku.
     </p>
 
-    <h2>4. Izin Aplikasi yang Digunakan</h2>
+    <h2>4. Izin Perangkat yang Digunakan</h2>
     <ul>
-        <li><strong>Notification Listener:</strong> Untuk membaca notifikasi perbankan demi deteksi mutasi otomatis</li>
-        <li><strong>Internet:</strong> Untuk mengakses situs Serpul dan Firebase</li>
-        <li><strong>Foreground Service:</strong> Untuk menjaga layanan validasi tetap aktif di latar belakang</li>
-        <li><strong>Receive Boot Completed:</strong> Untuk memulai ulang layanan setelah perangkat restart</li>
+        <li><strong>Akses Notifikasi (Notification Listener):</strong> Untuk membaca notifikasi mutasi saldo masuk dari aplikasi bank/e-wallet secara otomatis</li>
+        <li><strong>Akses Internet:</strong> Untuk memuat website pada peramban internal, sinkronisasi data Firebase, serta pemuatan iklan</li>
+        <li><strong>Layanan Latar Depan (Foreground Service):</strong> Untuk menjaga layanan pemantau mutasi tetap berjalan di latar belakang tanpa terhenti oleh sistem penghemat baterai</li>
+        <li><strong>Mulai Saat Perangkat Menyala (Boot Completed):</strong> Untuk menjalankan kembali layanan otomatisasi setelah perangkat dinyalakan ulang</li>
     </ul>
 
-    <h2>5. Iklan dalam Aplikasi</h2>
+    <h2>5. Iklan dalam Aplikasi (Google AdMob)</h2>
     <p>
         Aplikasi myDN FlashPay menampilkan iklan yang disediakan oleh <strong>Google AdMob</strong>
-        guna menunjang penyediaan dan keberlanjutan layanan aplikasi ini secara gratis kepada pengguna.
+        guna menunjang penyediaan, pengembangan, dan keberlanjutan layanan aplikasi ini secara gratis kepada pengguna.
     </p>
-    <p>Terkait iklan, berikut yang perlu Anda ketahui:</p>
+    <p>Terkait iklan, berikut informasi penting yang perlu Anda ketahui:</p>
     <ul>
-        <li><strong>Jenis iklan:</strong> Banner iklan ditampilkan di bagian bawah layar aplikasi</li>
-        <li><strong>Data yang dikumpulkan oleh AdMob:</strong> Google AdMob dapat mengumpulkan data seperti pengidentifikasi perangkat (Advertising ID), alamat IP, dan data interaksi pengguna untuk keperluan penargetan dan pengukuran iklan</li>
-        <li><strong>Tujuan penggunaan:</strong> Data tersebut digunakan oleh Google untuk menampilkan iklan yang relevan dan mengukur efektivitas iklan</li>
-        <li><strong>Kontrol pengguna:</strong> Anda dapat menonaktifkan iklan yang dipersonalisasi melalui pengaturan perangkat Android Anda di <em>Setelan → Google → Iklan → Pilih Keluar dari Personalisasi Iklan</em></li>
+        <li><strong>Bentuk Iklan:</strong> Banner iklan ditampilkan di bagian bawah layar aplikasi tanpa mengganggu penggunaan fitur utama.</li>
+        <li><strong>Data yang Dikumpulkan oleh AdMob:</strong> Google AdMob dapat mengumpulkan informasi pengidentifikasi perangkat (seperti Google Advertising ID), alamat IP, serta interaksi iklan untuk keperluan penargetan dan analisis efektivitas iklan.</li>
+        <li><strong>Kontrol Personalisasi Iklan:</strong> Anda memiliki kendali penuh untuk menonaktifkan personalisasi iklan melalui menu pengaturan perangkat Android Anda di: <em>Setelan &rarr; Google &rarr; Iklan &rarr; Hapus ID Iklan / Pilih Keluar dari Personalisasi Iklan</em>.</li>
     </ul>
     <p>
-        Untuk informasi lebih lanjut tentang bagaimana Google menggunakan data dari aplikasi yang menggunakan layanannya,
-        kunjungi: <a href="https://policies.google.com/technologies/partner-sites" target="_blank">policies.google.com/technologies/partner-sites</a>
+        Pelajari lebih lanjut tentang bagaimana Google memproses data melalui tautan resmi: 
+        <a href="https://policies.google.com/technologies/partner-sites" target="_blank">Kebijakan Google Partner Sites</a>.
     </p>
 
     <h2>6. Layanan Pihak Ketiga</h2>
-    <p>Aplikasi ini menggunakan layanan pihak ketiga berikut:</p>
+    <p>Aplikasi ini dapat berinteraksi dengan layanan pihak ketiga berikut:</p>
     <ul>
-        <li><a href="https://firebase.google.com/support/privacy" target="_blank">Google Firebase</a> — untuk penyimpanan data dan sinkronisasi riwayat transaksi</li>
-        <li><a href="https://policies.google.com/privacy" target="_blank">Google AdMob</a> — untuk menampilkan iklan dalam aplikasi guna menunjang layanan</li>
-        <li><strong>Serpul</strong> — platform topup pulsa yang diakses via WebView untuk validasi deposit</li>
+        <li><a href="https://firebase.google.com/support/privacy" target="_blank">Google Firebase</a> — untuk sinkronisasi cloud data riwayat mutasi</li>
+        <li><a href="https://policies.google.com/privacy" target="_blank">Google AdMob</a> — untuk penayangan iklan guna menunjang operasional aplikasi</li>
+        <li><strong>Website Server / Platform Pilihan Pengguna</strong> — platform pihak ketiga yang dibuka secara mandiri oleh pengguna melalui fitur Web Browser</li>
     </ul>
 
-    <h2>7. Data Anak-Anak</h2>
+    <h2>7. Perlindungan Privasi Anak-Anak</h2>
     <p>
-        Aplikasi ini tidak ditujukan untuk anak-anak di bawah usia 13 tahun. Kami tidak secara
-        sengaja mengumpulkan data pribadi dari anak-anak. Jika Anda mengetahui bahwa anak Anda
-        telah memberikan informasi kepada kami, silakan hubungi kami agar kami dapat menghapus data tersebut.
+        Aplikasi ini tidak ditujukan untuk anak-anak di bawah usia 13 tahun. Kami tidak mengumpulkan data pribadi anak-anak. Jika Anda meyakini terdapat data anak yang tidak sengaja tercatat, hubungi kami agar dapat segera dihapus.
     </p>
 
-    <h2>8. Perubahan Kebijakan Privasi</h2>
+    <h2>8. Pembaruan Kebijakan Privasi</h2>
     <p>
-        Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. Perubahan akan diberitahukan
-        melalui pembaruan aplikasi. Kami menyarankan Anda untuk meninjau halaman ini secara berkala.
+        Kebijakan Privasi ini dapat diperbarui sewaktu-waktu seiring dengan penambahan fitur atau penyesuaian regulasi. Setiap pembaruan akan dipublikasikan pada halaman ini. Anda dianjurkan untuk meninjau halaman ini secara berkala.
     </p>
 
     <h2>9. Hubungi Kami</h2>
     <p>
-        Jika Anda memiliki pertanyaan mengenai Kebijakan Privasi ini, silakan hubungi kami melalui
-        email pengembang yang tercantum di halaman aplikasi pada Google Play Store.
+        Apabila Anda memiliki pertanyaan, saran, atau masukan terkait Kebijakan Privasi ini, silakan hubungi kontak pengembang yang tertera pada listing aplikasi di Google Play Store.
     </p>
 </div>
 
